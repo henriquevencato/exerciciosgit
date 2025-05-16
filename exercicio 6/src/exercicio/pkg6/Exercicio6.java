@@ -1,21 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package exercicio.pkg6;
 
-/**
- *
- * @author aluno.saolucas
- */
+
 public class Exercicio6 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+   public static boolean Palindromo(String texto) {
+        
+        String textoF = texto.replaceAll("\\s+", "").toLowerCase();
+
+      
+        StringBuilder reverso = new StringBuilder(textoF).reverse();
+       
+        return textoF.equals(reverso.toString());
     }
-    
+
+    public static void main(String[] args) {
+      
+        String[] exp = {"Radar", "Deified", "A man a plan a canal Panama", "Não é palíndromo"};
+
+        for (String exemplo : exp) {
+            System.out.println("\"" + exemplo + "\" é palíndromo? " + Palindromo(exemplo));
+        }
+    }
 }
