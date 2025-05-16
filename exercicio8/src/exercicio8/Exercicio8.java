@@ -1,21 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package exercicio8;
 
-/**
- *
- * @author aluno.saolucas
- */
+import java.util.Arrays;
+
 public class Exercicio8 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static int[] inverterA(int[] arrayOriginal) {
+        int tam = arrayOriginal.length;
+        int[] arrayIn = new int[tam];
+
+        for (int i = 0; i < tam; i++) {
+            arrayIn[i] = arrayOriginal[tam - 1 - i];
+        }
+
+        return arrayIn;
     }
-    
+
+    public static void main(String[] args) {
+        int[] exemplo = {1, 2, 3, 4, 5};
+
+        int[] invertido = inverterA(exemplo);
+
+        System.out.println("Array original: " + Arrays.toString(exemplo));
+        System.out.println("Array invertido: " + Arrays.toString(invertido));
+    }
 }
